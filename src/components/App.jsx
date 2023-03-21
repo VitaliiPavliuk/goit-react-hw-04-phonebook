@@ -30,7 +30,7 @@ export const App = () => {
       ...contact,
     };
 
-    setContacts([finalContact, ...contacts]);
+    setContacts(prev => [finalContact, ...prev]);
   };
 
   const filterContacts = filterValue => {
@@ -38,7 +38,7 @@ export const App = () => {
   };
 
   const onDeleteContact = contactId => {
-    setContacts(contacts.filter(contact => contact.id !== contactId));
+    setContacts(prev => prev.filter(contact => contact.id !== contactId));
   };
 
   const filteredContacts = contacts.filter(contact =>

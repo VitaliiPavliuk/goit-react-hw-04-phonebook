@@ -9,7 +9,7 @@ export const ContactForm = ({ onAddContact }) => {
   });
 
   const handleInputChange = ({ target: { name, value } }) => {
-    setContactForm({ ...contactForm, [name]: value.trim() });
+    setContactForm(prev => ({ ...prev, [name]: value.trim() }));
   };
 
   const handleSubmit = e => {
